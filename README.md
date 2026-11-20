@@ -47,8 +47,8 @@ Example (Python):
 
 | File | Figure(s) in paper |
 |------|--------------------|
-| `wCDM_HSCY3.txt` | 2, 3, 4, 11 |
-| `wCDM_HSCY3_DESIDR2_DESDovekie_BBN.txt` | 2, 3, 4, 8, 11 |
+| `wCDM_HSCY3.txt` | 1, 2, 3, 4, 11 |
+| `wCDM_HSCY3_DESIDR2_DESDovekie_BBN.txt` | 1, 2, 3, 4, 8, 9, 11 |
 | `wCDM_HSCY3_DESIDR2_DESDovekie_BBN_DESIzprior.txt` | 4 |
 | `wCDM_HSCY3_DESIDR2_DESY5SN_BBN.txt` | 6 |
 | `wCDM_HSCY3_DESIDR2_DESDovekie_BBN_drop_zbin1.txt` | 8 |
@@ -60,13 +60,23 @@ Example (Python):
 
 | File | Figure(s) in paper |
 |------|--------------------|
-| `w0waCDM_HSCY3.txt` | 5, 12 |
-| `w0waCDM_HSCY3_DESIDR2_DESDovekie_BBN.txt` | 5, 8, 12 |
+| `w0waCDM_HSCY3.txt` | 1, 5, 12 |
+| `w0waCDM_HSCY3_DESIDR2_DESDovekie_BBN.txt` | 1, 5, 8, 9, 10, 12 |
 | `w0waCDM_HSCY3_DESIDR2_DESY5SN_BBN.txt` | 7 |
-| `w0waCDM_HSCY3_DESIDR2_DESDovekie_BBN_drop_zbin1.txt` | 8 |
+| `w0waCDM_HSCY3_DESIDR2_DESDovekie_BBN_drop_zbin1.txt` | 8, 10 |
 | `w0waCDM_HSCY3_DESIDR2_DESDovekie_BBN_drop_zbin2.txt` | 8 |
 | `w0waCDM_HSCY3_DESIDR2_DESDovekie_BBN_drop_zbin3.txt` | 8 |
 | `w0waCDM_HSCY3_DESIDR2_DESDovekie_BBN_drop_zbin4.txt` | 8 |
+
+Figures 2-8, 11 and 12 show posterior contours or marginalized constraints
+computed directly from these chains. Figures 1, 9 and 10 instead show model
+predictions evaluated at the maximum-posterior sample of the corresponding
+chain: the parameter values of that sample were used as input to the same
+CosmoSIS pipeline, run once with the `test` sampler, to compute the
+two-point correlation functions (Figs. 1 and 10) and the background
+distance and supernova residuals (Fig. 9). These model curves are not
+included in this repository, but they can be reproduced from the chains
+in this way.
 
 ## Note on the linear matter power spectrum
 
