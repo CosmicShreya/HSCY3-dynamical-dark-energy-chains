@@ -70,8 +70,9 @@ Example (Python):
 
 ## Note on the linear matter power spectrum
 
-The wCDM chains were run with a pipeline that includes the BACCO linear
-power spectrum emulator (CosmoSIS module `pklin`) in addition to CAMB.
+For the wCDM chains, the linear matter power spectrum is computed with the
+BACCO linear emulator (CosmoSIS module `pklin`); CAMB is also run in this
+pipeline, but the BACCO spectrum is the one used downstream.
 For the w0waCDM chains, the BACCO module was removed and the linear matter
 power spectrum is computed with the Einstein-Boltzmann code CAMB. All other
 pipeline modules and settings are identical. The complete configuration
