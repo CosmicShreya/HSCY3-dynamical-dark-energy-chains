@@ -16,7 +16,7 @@ All chains were produced with CosmoSIS using the PolyChord nested sampler.
 Each file is a standard CosmoSIS text output:
 
 - The header lines (starting with `#`) list the column names and record the
-  pipeline and parameter settings used for the run.
+  full pipeline configuration (module list and all settings) used for the run.
 - Each subsequent row is one sample.
 - The `weight` column gives the sample weight and must be used when
   computing posteriors.
@@ -31,15 +31,15 @@ Example (Python):
 
 ## Naming convention
 
-| Tag          | Meaning                                                     |
-|--------------|-------------------------------------------------------------|
-| `HSCY3`      | HSC-Y3 real-space cosmic shear (xi+ and xi-)                |
-| `DESIDR2`    | DESI DR2 BAO                                                |
-| `DESDovekie` | DES-Dovekie Type Ia supernovae (fiducial SN sample)         |
+| Tag          | Meaning                                                         |
+|--------------|-----------------------------------------------------------------|
+| `HSCY3`      | HSC-Y3 real-space cosmic shear (xi+ and xi-)                    |
+| `DESIDR2`    | DESI DR2 BAO                                                    |
+| `DESDovekie` | DES-Dovekie Type Ia supernovae (fiducial SN sample)             |
 | `DESY5SN`    | DES Y5 Type Ia supernovae (used only for the DES Y5 comparison) |
-| `BBN`        | Big Bang Nucleosynthesis prior on omega_b                   |
-| `DESIzprior` | DESI cross-correlation priors on the photo-z shifts         |
-| `drop_zbinN` | Tomographic bin N removed from the HSC-Y3 data vector       |
+| `BBN`        | Big Bang Nucleosynthesis prior on omega_b                       |
+| `DESIzprior` | DESI cross-correlation priors on the photo-z shifts             |
+| `drop_zbinN` | Tomographic bin N removed from the HSC-Y3 data vector           |
 
 ## Files and corresponding figures
 
@@ -68,12 +68,14 @@ Example (Python):
 | `w0waCDM_HSCY3_DESIDR2_DESDovekie_BBN_drop_zbin3.txt` | 8 |
 | `w0waCDM_HSCY3_DESIDR2_DESDovekie_BBN_drop_zbin4.txt` | 8 |
 
-Note on the linear matter power spectrum: the wCDM chains compute the
-linear matter power spectrum with the BACCO linear emulator, while all
-w0waCDM chains compute it directly with the Boltzmann code CAMB (the BACCO
-emulator was not used for w0waCDM because its training range does not
-cover the full w0-wa prior volume). All other pipeline settings are
-identical.
+## Note on the linear matter power spectrum
+
+The wCDM chains were run with a pipeline that includes the BACCO linear
+power spectrum emulator (CosmoSIS module `pklin`) in addition to CAMB.
+For the w0waCDM chains, the BACCO module was removed and the linear matter
+power spectrum is computed with the Einstein-Boltzmann code CAMB. All other
+pipeline modules and settings are identical. The complete configuration
+for each run is recorded in the header of the corresponding chain file.
 
 ## External chains (not included)
 
